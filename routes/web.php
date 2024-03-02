@@ -1,18 +1,23 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+Volt::route('/', 'users.index')->name('home')
+    ->middleware('auth');
+
+Route::group(['middleware' => 'guest'], function () {
+    Volt::route('/login', 'auth.login')->name('login');
+
+    Volt::route('/register', 'auth.register')->name('register');
+    Route::get('/logout',function(){
+       Auth::logout();
+       return redirect(route('login'));
+    })->name('logout')->withoutMiddleware('guest');
+
+
 });
+
+
