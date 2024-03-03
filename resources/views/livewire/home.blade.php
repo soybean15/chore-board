@@ -19,10 +19,11 @@ mount(function () {
         </x-slot:actions>
     </x-header>
 
-    <div class="flex flex-col items-start justify-center px-0 ">
+    <div class="flex flex-col items-start justify-center w-full px-0">
+
 
         @if ($this->user->families->isEmpty())
-            <div class="flex flex-col items-center justify-center w-40 " style="height: 550px">
+            <div class="flex flex-col items-center justify-center w-full" style="height: 550px">
                 <div class="text-gray-500">"You haven't started a family yet. Shall we create one now?"
 
                 </div>
@@ -30,7 +31,10 @@ mount(function () {
                 <livewire:components.createfamilymodal>
             </div>
         @else
-            <livewire:components.familylist>
+        <div class="w-full">
+            <livewire:components.familylist/>
+
+        </div>
         @endif
 
 

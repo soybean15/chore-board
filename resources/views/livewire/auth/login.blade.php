@@ -6,7 +6,7 @@ state([
     'form' => [
         'email' => '',
         'password' => '',
-        'remember_me'=>false
+        'remember_me' => false,
     ],
 ]);
 
@@ -37,7 +37,7 @@ $save = function () {
     <x-header title="Sign in" separator progress-indicator>
 
         <x-slot:actions>
-            <a href="/register" wire:navigate><x-button label="Register"  responsive  /></a>
+            <a href="/register" wire:navigate><x-button label="Register" responsive /></a>
         </x-slot:actions>
     </x-header>
 
@@ -46,19 +46,19 @@ $save = function () {
 
         <x-form wire:submit="save" class="max-w-sm p-5 border rounded-lg">
             @if (session('message'))
-            <x-alert icon="o-exclamation-triangle" class="alert-success">
+                <x-alert icon="o-exclamation-triangle" class="alert-success">
 
-                {{ session('message') }}
+                    {{ session('message') }}
 
-            </x-alert>
-        @endif
-        @if (session('error'))
-            <x-alert icon="o-exclamation-triangle" class="alert-warning">
+                </x-alert>
+            @endif
+            @if (session('error'))
+                <x-alert icon="o-exclamation-triangle" class="alert-warning">
 
-                {{ session('error') }}
+                    {{ session('error') }}
 
-            </x-alert>
-        @endif
+                </x-alert>
+            @endif
             <x-input label="Email" wire:model="form.email" type="email" icon="o-envelope" />
             <x-input label="Password" wire:model="form.password" type="password" icon="m-eye-slash" />
 
