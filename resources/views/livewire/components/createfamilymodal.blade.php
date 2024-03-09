@@ -1,6 +1,6 @@
 <?php
 
-use function Livewire\Volt\{state, on,uses};
+use function Livewire\Volt\{state, on, uses};
 use App\Models\Family;
 use Mary\Traits\Toast;
 
@@ -12,8 +12,7 @@ state([
     'family',
 ]);
 
-
-$open = function (){
+$open = function () {
     $this->myModal = true;
     $this->onEdit = false;
 };
@@ -36,11 +35,9 @@ $store = function (Family $family) {
         ]);
 
         $this->success('Item Successfully Updated', position: 'toast-center toast-end');
-
     }
 
-
-    $this->onEdit =false;
+    $this->onEdit = false;
     $this->myModal = false;
     $this->familyName = '';
 
@@ -65,7 +62,8 @@ on([
         Create
     </x-button>
 
-    <x-modal wire:model="myModal" title="{{ !$onEdit ? 'Create new family':'Update family' }} " subtitle="ex: My Family, Smith Family, Smiths" separator>
+    <x-modal wire:model="myModal" title="{{ !$onEdit ? 'Create new family' : 'Update family' }} "
+        subtitle="ex: My Family, Smith Family, Smiths" separator>
         <x-input label="Family Name" placeholder="Your family name" icon="o-users" wire:model='familyName' />
 
         <x-slot:actions>
