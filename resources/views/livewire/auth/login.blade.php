@@ -34,14 +34,14 @@ $save = function () {
 <div>
 
 
-    <x-header title="Register" separator progress-indicator >
+    <x-header title="Sign in" separator progress-indicator >
 
         <x-slot:actions>
             <a href="/register" wire:navigate><x-button label="Register" responsive /></a>
         </x-slot:actions>
     </x-header>
 
-    <div class="flex items-center justify-center p-0 md:p-20 ">
+    <div class="flex justify-center p-0 md:p-10 ">
 
 
         <x-form wire:submit="save" class="max-w-sm p-5 border rounded-lg">

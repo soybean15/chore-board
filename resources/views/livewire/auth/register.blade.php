@@ -38,7 +38,7 @@ $save = function () {
         </x-slot:actions>
     </x-header>
 
-    <div class="flex items-center justify-center p-0 md:p-20 ">
+    <div class="flex justify-center p-0 md:p-10 ">
 
 
         <x-form wire:submit="save" class="max-w-sm p-5 border rounded-lg">
