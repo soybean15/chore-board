@@ -34,7 +34,7 @@ $save = function () {
     <x-header title="Sign up" separator progress-indicator>
 
         <x-slot:actions>
-            <a href="/login" wire:navigate><x-button label="Login" responsive /></a>
+            <a href="/login" class="hidden lg:block" wire:navigate><x-button label="Login" responsive /></a>
         </x-slot:actions>
     </x-header>
 
@@ -63,8 +63,13 @@ $save = function () {
             <x-input label="Confirm Password" wire:model="form.password_confirmation" type="password"
                 icon="m-eye-slash" />
 
+                <div class="flex items-center justify-center">
+
+                <span>Have an account?</span><x-button label="Sign in" link="/login" class="btn-ghost" />
+            </div>
+
             <x-slot:actions>
-                <x-button label="Cancel" />
+
                 <x-button label="Sign up" class="btn-primary" type="submit" spinner="save" />
             </x-slot:actions>
         </x-form>

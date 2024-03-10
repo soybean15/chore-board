@@ -37,7 +37,7 @@ $save = function () {
     <x-header title="Sign in" separator progress-indicator >
 
         <x-slot:actions>
-            <a href="/register" wire:navigate><x-button label="Register" responsive /></a>
+            <a href="/register"  class="hidden lg:block" wire:navigate><x-button label="Register" responsive /></a>
         </x-slot:actions>
     </x-header>
 
@@ -61,7 +61,10 @@ $save = function () {
             @endif
             <x-input label="Email" wire:model="form.email" type="email" icon="o-envelope" />
             <x-input label="Password" wire:model="form.password" type="password" icon="m-eye-slash" />
+            <div class="flex items-center justify-center">
 
+                <span>No Account yet?</span><x-button label="Sign up here" link="/register" class="btn-ghost" />
+            </div>
             <x-slot:actions>
 
                 <x-button label="Sign in!" class="btn-primary" type="submit" spinner="save" />
