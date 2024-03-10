@@ -34,13 +34,13 @@ $store = function (Family $family) {
             'name' => $this->familyName,
         ]);
 
+     
         $this->success('Item Successfully Updated', position: 'toast-center toast-end');
     }
 
     $this->onEdit = false;
     $this->myModal = false;
     $this->familyName = '';
-
     $this->dispatch('refresh-table');
 };
 

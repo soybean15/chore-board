@@ -12,7 +12,9 @@ $families = computed(function () {
 
 
 on(['refresh-table' => function () {
-    $this->dispatch('$refresh');
+  $this->families=  Auth::user()->families;
+
+    //  $this->dispatch('$refresh');
 }]);
 
 $edit = function($family){
@@ -33,11 +35,11 @@ $delete = function(Family $family){
 
 
 
-    <div class="flex items-center justify-between my-3 text-xl font-bold "><span>Family List </span>
+    <div class="flex items-center justify-between text-xl font-bold "><span>Family List </span>
         <livewire:components.createfamilymodal/>
 
     </div>
-    <ul class="w-full p-10 border divide-y divide-gray-200 dark:divide-gray-700 ">
+    <ul class="w-full p-2 border divide-y divide-gray-200 md:p-10 md dark:divide-gray-700 ">
 
         @foreach ($this->families as $family)
             <li class="p-3 sm:pb-4">
