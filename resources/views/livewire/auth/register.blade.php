@@ -34,7 +34,7 @@ $save = function () {
     <x-header title="Sign up" separator progress-indicator>
 
         <x-slot:actions>
-            <a href="/register" wire:navigate><x-button label="Login" responsive /></a>
+            <a href="/login" wire:navigate><x-button label="Login" responsive /></a>
         </x-slot:actions>
     </x-header>
 
