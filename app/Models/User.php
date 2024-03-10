@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -46,5 +48,18 @@ class User extends Authenticatable
 
     public function families(){
         return $this->hasMany(Family::class);
+    }
+
+    public function belongsToFamilies(){
+
+        return $this->hasMany(FamilyMember::class);
+
+    }
+
+
+    public function scopeSearch(Builder $builder, $search){
+        return $builder->where('name','like',$search.'%')
+        ->whereDoesntHave('belongsToFamilies');
+
     }
 }
