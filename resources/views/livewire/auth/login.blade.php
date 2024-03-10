@@ -34,14 +34,14 @@ $save = function () {
 <div>
 
 
-    <x-header title="Sign in" separator progress-indicator >
+    <x-header title="Register" separator progress-indicator >
 
         <x-slot:actions>
             <a href="/register" wire:navigate><x-button label="Register" responsive /></a>
         </x-slot:actions>
     </x-header>
 
-    <div class="flex items-center justify-center p-20 ">
+    <div class="flex items-center justify-center p-0 md:p-20 ">
 
 
         <x-form wire:submit="save" class="max-w-sm p-5 border rounded-lg">
@@ -63,8 +63,8 @@ $save = function () {
             <x-input label="Password" wire:model="form.password" type="password" icon="m-eye-slash" />
 
             <x-slot:actions>
-                <x-button label="Cancel" />
-                <x-button label="Click me!" class="btn-primary" type="submit" spinner="save" />
+
+                <x-button label="Sign in!" class="btn-primary" type="submit" spinner="save" />
             </x-slot:actions>
         </x-form>
     </div>
