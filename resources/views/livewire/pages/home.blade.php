@@ -1,11 +1,19 @@
 <?php
 
-use function Livewire\Volt\{state, mount};
+use function Livewire\Volt\{state, mount,on};
 
 state(['user']);
 mount(function () {
     $this->user = Auth::user();
 });
+
+
+
+on(['refresh-table' => function () {
+
+      $this->dispatch('$refresh');
+}]);
+
 
 ?>
 

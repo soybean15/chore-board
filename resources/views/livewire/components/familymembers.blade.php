@@ -35,13 +35,11 @@ $store = function () {
     $this->success('Successfully added '.sizeof($this->selectedUsers). ' members', position: 'toast-bottom toast-end');
 };
 $search = function (string $value = '') {
-    // Besides the search results, you must include on demand selected option
-    //  $selectedOption = User::search($this->searchText)->get();
 
     $this->users = User::search($value)
         ->take(2)
         ->get();
-    // <-- Adds selected option
+
 };
 
 $delete =function(FamilyMember $member){

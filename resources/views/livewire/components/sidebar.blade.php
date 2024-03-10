@@ -30,6 +30,10 @@ mount(function(Family $family){
 
      @if($family)
      <x-menu-sub title="{{ $family->name }}" icon="o-users">
+        @foreach ( $family->members as  $member)
+        <x-menu-item title="{{ $member->name }}"  link="####" />
+        @endforeach
+
      </x-menu-sub>
      @endif
         <x-menu-sub title="Settings" icon="o-cog-6-tooth">

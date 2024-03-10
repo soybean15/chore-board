@@ -14,7 +14,7 @@ $families = computed(function () {
 on(['refresh-table' => function () {
   $this->families=  Auth::user()->families;
 
-    //  $this->dispatch('$refresh');
+      $this->dispatch('$refresh');
 }]);
 
 $edit = function($family){
@@ -25,6 +25,7 @@ $edit = function($family){
 $delete = function(Family $family){
     $family->delete();
     $this->error('Item Deleted', position: 'toast-bottom');
+    $this->dispatch('refresh-table');
 };
 
 
