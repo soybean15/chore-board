@@ -34,12 +34,11 @@ $delete = function(Family $family){
 <div>
 
 
-
     <div class="flex items-center justify-between text-xl font-bold "><span>Family List </span>
         <livewire:components.createfamilymodal/>
 
     </div>
-    <ul class="w-full p-2 border divide-y divide-gray-200 md:p-10 md dark:divide-gray-700 ">
+    <ul class="w-full p-2 border divide-y divide-gray-200 md:p-5 md dark:divide-gray-700 ">
 
         @foreach ($this->families as $family)
             <li class="p-3 sm:pb-4">
@@ -48,9 +47,9 @@ $delete = function(Family $family){
                   <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image">
                </div> --}}
                     <div class="flex-1 min-w-0">
-                        <p class="flex items-center font-medium text-gray-900 truncate text-md dark:text-white ">
+                        <a href="{{ route('family',['family'=>$family->id]) }}" class="flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline ">
                             {{ $family->name }}
-                        </p>
+                        </a>
                         <p class="text-sm text-gray-500 truncate dark:text-gray-400">
                             Number of members : 0
 

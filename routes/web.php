@@ -25,8 +25,8 @@ Route::group(['middleware' => 'guest'], function () {
 Route::middleware(['auth'])->group(function(){
 
 
-    Volt::route('/','home')->name('home');
-
+    Volt::route('/','pages.home')->name('home');
+    Volt::route('/{family}','pages.family')->name('family');
 });
 
 
