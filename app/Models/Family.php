@@ -9,4 +9,8 @@ class Family extends Model
 {
     use HasFactory;
     protected $fillable =['name','user_id'];
+
+    public function members(){
+        return $this->hasMany(FamilyMember::class);
+    }
 }

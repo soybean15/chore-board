@@ -23,15 +23,20 @@ mount(function(Family $family){
             <x-button label="Filters" @click="$wire.drawer = true" responsive icon="o-funnel" />
         </x-slot:actions> --}}
     </x-header>
+    <x-tabs selected="member-tab">
+        <x-tab name="chores-tab" label="Chores" icon="o-clipboard-document-list">
 
-    <div class="flex flex-col">
-        <div class="flex items-center ">
-            <x-stat title="Chores" value="44" icon="o-clipboard-document-list" tooltip="Total Chores" class="mx-1 my-1 w-80"/>
-            <x-stat title="Pending" value="5" icon="o-clock" tooltip="Hello" color="text-gray-500"  class="mx-1 my-1 w-80"/>
-            <x-stat title="On Going" value="44" icon="s-clock" tooltip="Hello" color="text-orange-500" class="mx-1 my-1 w-80"/>
-            <x-stat title="Done" value="44" icon="s-check-circle" tooltip="Hello"  color="text-green-600"  class="mx-1 my-1 w-80"/>
+            <livewire:components.chores/>
+        </x-tab>
 
-        </div>
+        <x-tab name="merit-tab" label="Merits/Rewards" icon="o-gift-top">
+            <div>Merits</div>
+        </x-tab>
+        <x-tab name="member-tab" label="Family Members" icon="o-users">
 
-    </div>
+            <livewire:components.familymembers :family='$family'/>
+        </x-tab>
+    </x-tabs>
+
+
 </div>
